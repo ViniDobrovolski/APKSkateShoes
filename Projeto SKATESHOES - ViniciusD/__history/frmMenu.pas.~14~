@@ -1,0 +1,118 @@
+unit frmMenu;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl,
+  FMX.Menus, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ExtCtrls,
+  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
+  FMX.ListView, FMX.MultiView, FMX.Objects, FMX.Layouts, FMX.Edit, FMX.Ani,
+  System.Actions, FMX.ActnList;
+
+type
+  TfrmMenuu = class(TForm)
+    ActionList1: TActionList;
+    ChangeTabAction1: TChangeTabAction;
+    MultiView1: TMultiView;
+    LayoutMenuTopo: TLayout;
+    CircleFoto: TCircle;
+    LabelNomeUser: TLabel;
+    VertScrollBox1: TVertScrollBox;
+    RectConta: TRoundRect;
+    Label1: TLabel;
+    RoundPedidos: TRoundRect;
+    LabelProfissionais: TLabel;
+    rect_toolbar: TRectangle;
+    img_busca: TImage;
+    rect_busca: TRectangle;
+    img_cancel_busca: TImage;
+    AnimationBusca: TFloatAnimation;
+    RoundRect1: TRoundRect;
+    edt_busca: TEdit;
+    btnMenu: TSpeedButton;
+    TabControl1: TTabControl;
+    TabItem1: TTabItem;
+    Image1: TImage;
+    TabItem2: TTabItem;
+    Image2: TImage;
+    Label2: TLabel;
+    VertScrollBoxMinhaLista: TVertScrollBox;
+    procedure RectContaClick(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure img_buscaClick(Sender: TObject);
+    private
+    { Private declarations }
+    procedure CarregarListaProdutos(
+            id: integer;
+            nome, descricao: string;
+            valor: double);
+            procedure GetProdutosBase;
+  public
+    { Public declarations }
+  end;
+
+
+
+
+var
+  frmMenuu: TfrmMenuu;
+
+implementation
+
+{$R *.fmx}
+
+uses UDM, frmConta, frmPedido;
+
+ procedure TfrmMenuu.GetProdutosBase;
+  begin
+  DM.FDQueryProduto.Close;
+  DM.FDQueryProduto.Open();
+  while not DM.FDQueryProduto.Eof do
+  begin
+    CarregarListaProdutos(
+    DM.FDQueryProdutoprodutoid.AsInteger,
+    DM.FDQueryProdutonome.AsString,
+    DM.FDQueryProdutodescricao.AsString,
+    DM.FDQueryProdutovalor.AsFloat);
+  end;
+
+  procedure TfrmMenuu.Image1Click(Sender: TObject);
+begin
+
+ChangeTabAction1.Execute;
+
+end;
+
+
+
+
+procedure TfrmMenuu.img_buscaClick(Sender: TObject);
+begin
+
+    Application.CreateForm(TfrmPed, frmPed);
+
+    frmPed.Show;
+    frmMenuu.Release;
+    frmMenuu:=nil;
+
+end;
+
+procedure TfrmMenuu.RectContaClick(Sender: TObject);
+
+begin
+
+
+    Application.CreateForm(TfrmConta1, frmConta1);
+    frmConta1.CarregarCampos;
+    frmConta1.Show;
+    frmMenuu.Release;
+    frmMenuu:=nil;
+
+
+end;
+
+end.
+
+
+

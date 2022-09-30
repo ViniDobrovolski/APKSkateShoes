@@ -1,0 +1,87 @@
+unit UDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.FMXUI.Wait, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+  TDM = class(TDataModule)
+    FDConnection1: TFDConnection;
+    FDQueryPessoa: TFDQuery;
+    FDQueryProduto: TFDQuery;
+    procedure FDConnection1BeforeConnect(Sender: TObject);
+    procedure FDConnection1AfterConnect(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDM.FDConnection1AfterConnect(Sender: TObject);
+var
+strSQL: string;
+begin
+ strSQL := 'create table IF NOT EXISTS pessoa (       '+//
+           'id interger not null primary key autoincrement,  '+//
+           'nome varchar(40),                          '   +//
+           'cpf varchar(11),                           '    +//
+           'celular varchar(13),                           '    +//
+           'cep varchar(10),                           '    +//
+           'endereco varchar(60),                           '    +//
+           'cidade varchar(60),                           '    +//
+           'uf char(2),                           '    +//
+           'bairro varchar(60),                           '    +//
+           'email varchar(60),                           '    +//
+           'senha varchar(40),                           '    +//
+           'img_usuario blob)';
+
+           FDConnection1.ExecSQL(strSQL);
+
+           strSQL := EmptyStr;
+
+           strSQL := 'create table IF NOT EXISTS produto(' +//
+                     'id interger not null primary key autoincrement,  '+//
+                     'nome varchar(20),  '+//
+                     'descricao varchar(200),  '+//
+                     'valor numeric(14,2),  '+//
+                     'quantidade interger,  '+//
+                     'img_usuario blob)' ;
+
+
+                     FDConnection1.ExecSQL(strSQL);
+
+                     FDQueryPessoa.Active := true;
+                     FDQueryProduto.Active := true;
+end;
+
+procedure TDM.FDConnection1BeforeConnect(Sender: TObject);
+var
+strPath: string;
+
+begin
+{$IF DEFINED(IOS) or DEFINED(ANDROID)}
+ strPath := System.IOUtils.TPath.Combine
+ (System.IOUtils.TPath.GetDocummentsPath,
+  'bd.db');
+  {$ENDIF}
+  FDConnection1.Params.Values['UseUnicode'] := 'False';
+  FDConnection1.Params.Values['DATABASE'] := strPath;
+end;
+
+end.

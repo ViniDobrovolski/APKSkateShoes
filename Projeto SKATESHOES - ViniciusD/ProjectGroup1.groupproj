@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{01D5ABAB-C201-418E-AB79-E34B79E2161D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="NovoProjetoDelphi1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Aula2\AppListaProdutos.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NovoProjetoDelphi1">
+        <MSBuild Projects="NovoProjetoDelphi1.dproj"/>
+    </Target>
+    <Target Name="NovoProjetoDelphi1:Clean">
+        <MSBuild Projects="NovoProjetoDelphi1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NovoProjetoDelphi1:Make">
+        <MSBuild Projects="NovoProjetoDelphi1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AppListaProdutos">
+        <MSBuild Projects="..\Aula2\AppListaProdutos.dproj"/>
+    </Target>
+    <Target Name="AppListaProdutos:Clean">
+        <MSBuild Projects="..\Aula2\AppListaProdutos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppListaProdutos:Make">
+        <MSBuild Projects="..\Aula2\AppListaProdutos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NovoProjetoDelphi1;AppListaProdutos"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NovoProjetoDelphi1:Clean;AppListaProdutos:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NovoProjetoDelphi1:Make;AppListaProdutos:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,81 @@
+unit NovoProjetoDelphi;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes,
+  System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Layouts, FMX.TabControl, System.Actions, FMX.ActnList,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit;
+
+type
+  TfIniciar = class(TForm)
+    LayoutRodape: TLayout;
+    Image1: TImage;
+    Pular: TLabel;
+    ActionList1: TActionList;
+    TabControl1: TTabControl;
+    TabItem1: TTabItem;
+    TabItem2: TTabItem;
+    TabItem3: TTabItem;
+    TabItem4: TTabItem;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    ChangeTabAction1: TChangeTabAction;
+    ChangeTabAction2: TChangeTabAction;
+    ChangeTabAction3: TChangeTabAction;
+    ChangeTabAction4: TChangeTabAction;
+    Edit1: TEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    Edit2: TEdit;
+    Button1: TButton;
+    Label4: TLabel;
+    Image5: TImage;
+    Label7: TLabel;
+    Edit3: TEdit;
+    Label8: TLabel;
+    Edit4: TEdit;
+    Button2: TButton;
+    StyleBook1: TStyleBook;
+    procedure Image1Click(Sender: TObject);
+    procedure PularClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fIniciar: TfIniciar;
+
+implementation
+
+{$R *.fmx}
+
+procedure TfIniciar.Image1Click(Sender: TObject);
+begin
+  case TabControl1.TabIndex of
+    0:
+      ChangeTabAction2.Execute;
+    1:
+      ChangeTabAction3.Execute;
+    2:
+      ChangeTabAction4.Execute;
+  end;
+end;
+
+procedure TfIniciar.PularClick(Sender: TObject);
+begin
+  case TabControl1.TabIndex of
+    0:
+      ChangeTabAction4.Execute;
+  end;
+
+end;
+end.

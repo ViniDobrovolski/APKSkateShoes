@@ -1,0 +1,12 @@
+object fIniciar: TfIniciar
+  Left = 0
+  Top = 0
+  Caption = 'Iniciar'
+  ClientHeight = 480
+  ClientWidth = 360
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+end

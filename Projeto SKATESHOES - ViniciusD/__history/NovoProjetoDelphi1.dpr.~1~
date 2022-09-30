@@ -1,0 +1,14 @@
+program NovoProjetoDelphi1;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  NovoProjetoDelphi in 'NovoProjetoDelphi.pas' {fIniciar};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfIniciar, fIniciar);
+  Application.Run;
+end.

@@ -1,0 +1,100 @@
+inherited fIniciar_LgXhdpiTb: TfIniciar_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited LayoutRodape: TLayout
+    Position.Y = 779.000000000000000000
+    Size.Width = 480.000000000000000000
+    inherited Image1: TImage
+      MultiResBitmap.Height = 64
+      MultiResBitmap.Width = 64
+      Position.X = 430.000000000000000000
+    end
+    inherited Image6: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+      MultiResBitmap.LoadSize = 2
+    end
+    inherited Image7: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+    end
+  end
+  inherited TabControl1: TTabControl
+    Size.Width = 480.000000000000000000
+    Size.Height = 779.000000000000000000
+    Sizes = (
+      480s
+      779s
+      480s
+      779s
+      480s
+      779s
+      480s
+      779s)
+    inherited TabItem1: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Image2: TImage
+        MultiResBitmap.Height = 480
+        MultiResBitmap.Width = 100
+        MultiResBitmap.LoadSize = 2
+      end
+    end
+    inherited TabItem2: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Image3: TImage
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 2
+      end
+      inherited Label2: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited TabItem3: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Image4: TImage
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 1
+      end
+      inherited Label3: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Label5: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Label6: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited BtnCadastrar: TButton
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited TabItem4: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Label4: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Image5: TImage
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 1
+      end
+      inherited Label7: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 10
+      end
+      inherited Label8: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited btnLogin: TButton
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+end

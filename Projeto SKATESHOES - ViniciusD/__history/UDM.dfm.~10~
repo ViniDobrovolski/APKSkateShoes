@@ -1,0 +1,66 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 342
+  Width = 330
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\Users\VODOBROVOLSK.UNIVEL\Desktop\NovoProjeto\Databa' +
+        'se\bancoDados.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    AfterConnect = FDConnection1AfterConnect
+    BeforeConnect = FDConnection1BeforeConnect
+    Left = 120
+    Top = 56
+  end
+  object FDQueryPessoa: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from pessoa'
+      'where nome=:pNome')
+    Left = 128
+    Top = 192
+    ParamData = <
+      item
+        Name = 'PNOME'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+    object FDQueryPessoatelefone: TWideStringField
+      FieldName = 'telefone'
+      Origin = 'telefone'
+      Size = 15
+    end
+    object FDQueryPessoaid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDQueryPessoanome: TWideStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 50
+    end
+    object FDQueryPessoaemail: TWideStringField
+      FieldName = 'email'
+      Origin = 'email'
+      Size = 50
+    end
+    object FDQueryPessoasenha: TWideStringField
+      FieldName = 'senha'
+      Origin = 'senha'
+      Size = 15
+    end
+  end
+  object FDQueryProduto: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select*from produto;')
+    Left = 224
+    Top = 192
+  end
+end

@@ -1,0 +1,125 @@
+inherited fIniciar_LgXhdpiTb: TfIniciar_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited LayoutRodape: TLayout
+    Position.Y = 779.000000000000000000
+    Size.Width = 480.000000000000000000
+    inherited Image1: TImage
+      MultiResBitmap.Height = 64
+      MultiResBitmap.Width = 64
+      Position.X = 430.000000000000000000
+    end
+    inherited Image6: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+      MultiResBitmap.LoadSize = 2
+    end
+    inherited Image7: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+      MultiResBitmap = <
+        item
+          Width = 32
+          Height = 32
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+            F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            0161494441545847ED96BF4AC44010C6B387C137B0B94EAB2B247F085869A385
+            2058E923E8D53E8EE723D81D08165E6327C49054576967E31B4820F1FB92B920
+            44B3C9DDC55C911F0C333B9BCCCECDEC66CFE8E91A65DBF62B8D344DCFA328FA
+            C8BC2D6359D6502935A53D002EC534CDED6CF61FE05A8B7507E2EB8C52028EE3
+            DC4026AEEB1E8A6B65188B31195B5C05A504D09B33C815CC51EE590B23C6646C
+            191774DE822DD17F82536261B31CC8B0114992BC846118C9F057B41540D94EA1
+            6E971179B792262DF884CC6A0A9FAD85B6053F780E82E052EC4AB0EBEFA12EF2
+            51359D6FC23E813E813E8126DF81239CEF27B175EC8BD6D2A4023B90E39AC267
+            6BA14D007FD51EA1C6CB88BC5B894259531AB8F1F67CDF7F9732F3578CF1E99D
+            706E5510F31A8A17D40C314F3CCFDBC54DF9C6B9CD3B0528DB03E40EE63CF7AC
+            85396332B68C0B4A2DC8BC2DB3592D402601258EE32FF1B50ED75AAC2BAE9EAE
+            308C6FDC1A879AC20B84540000000049454E44AE426082}
+          FileName = 'D:\Users\VODOBROVOLSK.UNIVEL\Downloads\icons8-multitask-32.png'
+        end>
+    end
+  end
+  inherited TabControl1: TTabControl
+    Size.Width = 480.000000000000000000
+    Size.Height = 779.000000000000000000
+    Sizes = (
+      480s
+      779s
+      480s
+      779s
+      480s
+      779s
+      480s
+      779s)
+    inherited TabItem1: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Image2: TImage
+        MultiResBitmap.Height = 480
+        MultiResBitmap.Width = 100
+        MultiResBitmap.LoadSize = 2
+      end
+    end
+    inherited TabItem2: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Image3: TImage
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 2
+      end
+      inherited Label2: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited TabItem3: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Image4: TImage
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 1
+      end
+      inherited Label3: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Label5: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Label6: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Button1: TButton
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+    inherited TabItem4: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Label4: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited Image5: TImage
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 2
+      end
+      inherited Label7: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 11
+      end
+      inherited Edit3: TEdit
+        TabOrder = 7
+      end
+      inherited Label8: TLabel
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TabOrder = 9
+      end
+      inherited Button2: TButton
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+    end
+  end
+end

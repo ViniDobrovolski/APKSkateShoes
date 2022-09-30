@@ -1,0 +1,16 @@
+program NovoProjetoDelphi1;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  NovoProjetoDelphi in 'NovoProjetoDelphi.pas' {fIniciar},
+  UDM in 'UDM.pas' {DM: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TfIniciar, fIniciar);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.

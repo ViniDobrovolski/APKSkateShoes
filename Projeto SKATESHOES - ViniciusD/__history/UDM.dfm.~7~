@@ -1,0 +1,41 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 342
+  Width = 330
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\Users\VODOBROVOLSK.UNIVEL\Desktop\NovoProjeto\Databa' +
+        'se\bd.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    AfterConnect = FDConnection1AfterConnect
+    BeforeConnect = FDConnection1BeforeConnect
+    Left = 120
+    Top = 56
+  end
+  object FDQueryPessoa: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select* from pessoa'
+      'where nome =:pNome')
+    Left = 128
+    Top = 192
+    ParamData = <
+      item
+        Name = 'PNOME'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object FDQueryProduto: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select*from produto;')
+    Left = 224
+    Top = 192
+  end
+end
